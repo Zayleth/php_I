@@ -25,6 +25,8 @@
       <th>Due date</th>
       <th>Image</th>
       <th>Description</th>
+      <th colspan="2">Actions</th>
+
     </tr>
 
     <?php
@@ -88,6 +90,13 @@
       <td>
         <?php echo $ver[6]; ?>
       </td>
+
+      <td><a href="editar.php?editar=<?php echo $ver[0]; ?>">Editar</a>
+      </td>
+
+      <td>Eliminar
+      </td>
+
     </tr>
 
     <?php

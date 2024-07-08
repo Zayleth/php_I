@@ -9,7 +9,24 @@
   <h1>Search - Products data</h1>
 
   <form action="" method="post">
-    <input type="text" name="search"><button type="submit">Search product name</button>
+  <?php include "conexion.php"; ?>
+    <input list="productos" type="text" name="search">
+      
+    <datalist id="productos">
+    
+      <?php
+      $sql = "SELECT nombre_producto FROM productos";
+      $guardar_consuta = mysqli_query($conex, $sql);
+
+      while ($ver = mysqli_fetch_array($guardar_consuta)) {
+      ?>
+        
+        <option value="<?php echo $ver[0]; ?>"></option>
+        <?php } ?>
+
+      </datalist>
+
+      <button type="submit">Search product name</button>
   </form>
 
   <br><br>
@@ -26,8 +43,6 @@
     </tr>
 
     <?php
-    include "conexion.php";
-
     // buscador de productos: 
 
     if(isset($_POST['search'])) {
@@ -37,11 +52,8 @@
       $sql = "SELECT * FROM productos";
     }
 
-
     $guardar_consuta = mysqli_query($conex, $sql);
 
-
-    // mysqli_fetch_array($guardar_consuta) -> agarrame estos valores de un arreglo -> posiciones
     while ($ver = mysqli_fetch_array($guardar_consuta)) {
     ?>
 
