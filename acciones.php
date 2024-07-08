@@ -18,7 +18,7 @@ switch($hidden) {
   break;
 
   case 2:
-  $sql = "UPDATE productos set nombre_producto = '$product_name', precio_producto = '$price', cantidad_producto = '$amount', fecha_v_producto = '$due_date', imagen_producto = '$image', descripcion_producto = '$description', status_producto = '$status' WHERE id_producto = 'identificacion'";
+  $sql = "UPDATE productos set nombre_producto = '$product_name', precio_producto = '$price', cantidad_producto = '$amount', fecha_v_producto = '$due_date', imagen_producto = '$image', descripcion_producto = '$description', status_producto = '$status' WHERE id_producto = '$identificacion'";
   
   if (mysqli_query($conex, $sql)) {
     header("location:editar.php?respuesta=1");
