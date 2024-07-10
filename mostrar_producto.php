@@ -35,6 +35,7 @@
 
     <?php
     include "conexion.php";
+    include "other_functions.php";
 
     // para ordenar el nombre_producto en orden alfabetico
     if(isset ($_GET['n'])) {
@@ -76,7 +77,7 @@
       </td>
 
       <td>
-        <?php echo number_format($ver[2],2, ",", "."); 
+        <?php echo number_format($ver[2],2, ",", "."). "$ "; 
         # number_format -> para traer el numero con decimales. 
         # 1er parametro -> numero o posicion a traer -> en este caso -> precio
         # 2do parametro -> cantidad de decimales
@@ -90,7 +91,7 @@
       </td>
 
       <td>
-        <?php echo $ver[4]; ?>
+        <?php echo fix_date_order ($ver[4]); ?>
       </td>
 
       <td>
