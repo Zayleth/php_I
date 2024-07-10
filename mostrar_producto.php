@@ -76,7 +76,13 @@
       </td>
 
       <td>
-        <?php echo $ver[2]; ?>
+        <?php echo number_format($ver[2],2, ",", "."); 
+        # number_format -> para traer el numero con decimales. 
+        # 1er parametro -> numero o posicion a traer -> en este caso -> precio
+        # 2do parametro -> cantidad de decimales
+        # 3er tercer parametro -> cual es el simbolo que se usara para separar los decimales
+        # 4to parametro -> simbolo para las cantidades de miles
+        ?> 
       </td>
 
       <td>
