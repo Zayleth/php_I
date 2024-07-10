@@ -7,6 +7,9 @@
 </head>
 <body>
 
+  <?php include "menu.php"
+  ?>
+
   <!--insertar.php -> archivo creado para el formulario para ingresar datos de productos-->
 
   <h1>Insert Products</h1>

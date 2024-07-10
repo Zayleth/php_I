@@ -6,6 +6,10 @@
   <title>Search Products</title>
 </head>
 <body>
+
+  <?php include "menu.php"
+  ?>
+  
   <h1>Search - Products data</h1>
 
   <form action="" method="post">

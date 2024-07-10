@@ -6,6 +6,10 @@
   <title>Show Products</title>
 </head>
 <body>
+  
+  <?php include "menu.php"
+  ?>
+  
   <h1>Inventory - Product data</h1>
   <table border="1">
     <tr>
@@ -91,12 +95,14 @@
         <?php echo $ver[6]; ?>
       </td>
 
-      <td><a href="editar.php?editar=<?php echo $ver[0]; ?>">Editar</a>
+      <td>
+        <a href="editar.php?editar=<?php echo $ver[0]; ?>">Editar</a>
       </td>
 
-      <td>Eliminar
+      <td>
+        <a class="delete_item"
+        href= "#" onclick="confirmar (<?php echo $ver[0]; ?>)">Eliminar</a>
       </td>
-
     </tr>
 
     <?php
@@ -105,6 +111,17 @@
     
   </table>
   
+  <script>
+
+    function confirmar(cod) {
+      let respuesta = confirm("Do you really want to delete?")
+
+      if (respuesta) {
+        window.location.href = "acciones.php?e = " +cod + "&hidden = 3";
+      }
+    }
+
+  </script>
   
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

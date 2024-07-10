@@ -26,6 +26,9 @@ switch($hidden) {
     header("location:editar.php?respuesta=2");
   }
 
+  case 3:
+    
+
   break;
 }
 
