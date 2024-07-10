@@ -38,10 +38,10 @@
 
     // para ordenar el nombre_producto en orden alfabetico
     if(isset ($_GET['n'])) {
-      $sql = "SELECT * FROM productos ORDER BY ".$_GET['n']." ".$_GET['orden_alfabetico'];
+      $sql = "SELECT * FROM productos WHERE status_producto=0 ORDER BY ".$_GET['n']." ".$_GET['orden_alfabetico'];
     
     } else {
-      $sql = "SELECT * FROM productos";
+      $sql = "SELECT * FROM productos WHERE status_producto=0";
     }
 
     $guardar_consuta = mysqli_query($conex, $sql);
@@ -100,8 +100,7 @@
       </td>
 
       <td>
-        <a class="delete_item"
-        href= "#" onclick="confirmar (<?php echo $ver[0]; ?>)">Eliminar</a>
+        <a href= "#" onclick="confirmar (<?php echo $ver[0]; ?>)">Eliminar</a>
       </td>
     </tr>
 
@@ -117,7 +116,7 @@
       let respuesta = confirm("Do you really want to delete?")
 
       if (respuesta) {
-        window.location.href = "acciones.php?e = " +cod + "&hidden = 3";
+        window.location.href = "acciones.php?eliminar="+cod+"&hidden=3";
       }
     }
 
