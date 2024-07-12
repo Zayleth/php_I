@@ -47,5 +47,16 @@ switch($hidden) {
       header("location:mostrar_producto.php?");
     }
   break;
+
+  case 4:
+    $sql= "INSERT INTO usuarios VALUES ('', '$nick', '$mail', MD5('$password'), 0, 0)";
+
+    if (mysqli_query($conex, $sql)) {
+      header ("location:registro_usuario.php?respuesta=1");
+    } else {
+      header ("location:registro_usuario.php?respuesta=2");
+    }
+
+    break;
 }
 ?>

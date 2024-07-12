@@ -13,6 +13,10 @@
   <?php 
   if (@$_GET['respuesta'] == 1) { ?>
     <h2 style="color: #0f0;">Data was edited successfully.</h2>
+
+    <!--agregamos el meta refresh para que el mensaje de exito dure cierta cantidad de segundos y se elimine-->
+
+    <meta http-equiv="refresh" content="2; url=mostrar_producto.php" />
   
   <?php 
   }
@@ -21,7 +25,7 @@
   <?php
   if (@$_GET['respuesta'] == 2) { ?>
     <h2 style="color: #f03;">System under maintenance. Try again later</h2>
-
+    <meta http-equiv="refresh" content="2; url=mostrar_producto.php" />
   <?php 
   }
   if (isset($_GET['respuesta'])) {} else {
