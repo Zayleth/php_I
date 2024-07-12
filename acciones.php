@@ -49,6 +49,21 @@ switch($hidden) {
   break;
 
   case 4:
+
+    $sql_nick="SELECT user_nick FROM usuarios WHERE user_nick='$nick'";
+    if (mysqli_query($conex, $sql_nick)) {
+      header("location:registro_usuario.php?respuesta=3");
+      break;
+    }
+
+    $sql_mail="SELECT user_mail FROM usuarios WHERE user_mail='$mail'";
+    if (mysqli_query($conex, $sql_mail)) {
+      header("location:registro_usuario.php?respuesta=4");
+      break;
+    }
+
+
+    
     $sql= "INSERT INTO usuarios VALUES ('', '$nick', '$mail', MD5('$password'), 0, 0)";
 
     if (mysqli_query($conex, $sql)) {

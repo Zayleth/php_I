@@ -21,6 +21,33 @@ user_status -> usuario activo () inactivo ()
 
   <h1>User Register</h1>
 
+  <?php
+  if (@$_GET['respuesta'] == 1) { ?>
+  <h2>Successful registration!</h2>
+  <?php }
+  ?>
+
+  <?php
+  if (@$_GET['respuesta'] == 2) { ?>
+  <h2>Failed to register</h2>
+  <?php }
+  ?>
+
+  <?php
+  if (@$_GET['respuesta'] == 3) { ?>
+  <h2>Nick already registered, try another</h2>
+  <?php }
+  ?>
+
+  <?php
+  if (@$_GET['respuesta'] == 4) { ?>
+  <h2>The email is already registered, try with another</h2>
+  <?php }
+  ?>
+
+
+
+
   <form action="acciones.php" method="post">
     <label for="user_nick">Nick:</label>
     <input type="text" id="user_nick" name="nick" required>
