@@ -35,16 +35,9 @@ user_status -> usuario activo () inactivo ()
 
   <?php
   if (@$_GET['respuesta'] == 3) { ?>
-  <h2>Nick already registered, try another</h2>
+  <h2>Nick or email already registered, try another</h2>
   <?php }
   ?>
-
-  <?php
-  if (@$_GET['respuesta'] == 4) { ?>
-  <h2>The email is already registered, try with another</h2>
-  <?php }
-  ?>
-
 
 
 

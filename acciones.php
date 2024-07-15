@@ -49,29 +49,30 @@ switch($hidden) {
   break;
 
   case 4:
+    // para revisar si el nick o correo esta repetido
+    $sql_nick_mail = "SELECT count(user_id) from usuarios where user_nick='$nick' or user_mail='$mail'";
 
-    $sql_nick="SELECT user_nick FROM usuarios WHERE user_nick='$nick'";
-    if (mysqli_query($conex, $sql_nick)) {
-      header("location:registro_usuario.php?respuesta=3");
-      break;
-    }
+    // $nick and $user_mail are NAMES from FORM
 
-    $sql_mail="SELECT user_mail FROM usuarios WHERE user_mail='$mail'";
-    if (mysqli_query($conex, $sql_mail)) {
-      header("location:registro_usuario.php?respuesta=4");
-      break;
-    }
+    // consulta que va a la base de datos
+    $k = mysqli_query($conex,$sql_nick_mail);
 
-
+    // vector que trae la consulta
+    $y = mysqli_fetch_array($k);
     
-    $sql= "INSERT INTO usuarios VALUES ('', '$nick', '$mail', MD5('$password'), 0, 0)";
+    if($y[0]>0){
+      header("location:registro_usuario.php?respuesta=3");
+    }else{
+      
+      $sql= "INSERT INTO usuarios VALUES ('', '$nick', '$mail', MD5('$password'), 0, 0)";
+    
 
-    if (mysqli_query($conex, $sql)) {
+      if (mysqli_query($conex, $sql)) {
       header ("location:registro_usuario.php?respuesta=1");
     } else {
       header ("location:registro_usuario.php?respuesta=2");
     }
-
+    }
     break;
 }
 ?>
