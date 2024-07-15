@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(isset($_SESSION["quien"])) {
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +15,14 @@
 </head>
 <body>
   
-  <?php include "menu.php"
+  <?php include "menu.php";
+  include "other_functions.php";
+  include "conexion.php";
   ?>
+
+  <h1>Bienvenido <?php echo $_SESSION['nick'];?></h1>
   
-  <h1>Inventory - Product data</h1>
+  <h2>Inventory - Product data</h2>
   <table border="1">
     <tr>
       <th>ID</th>
@@ -34,8 +46,6 @@
     </tr>
 
     <?php
-    include "conexion.php";
-    include "other_functions.php";
 
     // para ordenar el nombre_producto en orden alfabetico
     if(isset ($_GET['n'])) {
@@ -91,7 +101,7 @@
       </td>
 
       <td>
-        <?php echo fix_date_order ($ver[4]); ?>
+        <?php echo fix_date_order($ver[4]); ?>
       </td>
 
       <td>
@@ -134,3 +144,9 @@
 
 </body>
 </html>
+
+<?php 
+} else {
+  header("location:registro_usuario.php?respuesta=6");
+}
+?>

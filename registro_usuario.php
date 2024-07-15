@@ -18,6 +18,25 @@ user_status -> usuario activo () inactivo ()
   <title>User Register</title>
 </head>
 <body>
+  <!--VARIABLES GET Y POST - BUSCAR DIFERENCIA-->
+  <!--APARTADO DE LOGIN-->
+  <h1>Login:</h1>
+
+  <form method="post" action="acciones.php">
+    <label for="login">Nick or mail:</label>
+    <input type="text" id="pase" name="pase" required>
+    <br><br>
+
+    <label for="clave">Clave:</label>
+    <input type="password" id="password" name="password" required>
+    <input type="hidden" name="hidden" value="5">
+    <br><br>
+
+    <button type="submit">Enter</button>
+  </form>
+
+
+
 
   <h1>User Register</h1>
 
@@ -38,6 +57,7 @@ user_status -> usuario activo () inactivo ()
   <h2>Nick or email already registered, try another</h2>
   <?php }
   ?>
+
 
 
 

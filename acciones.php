@@ -74,5 +74,27 @@ switch($hidden) {
     }
     }
     break;
+
+    case 5:
+      // sentencia para permitir el login del user con el nick o correo PERO que coincida con la contraseña.
+      $sql = "SELECT user_id, user_nick, user_mail from usuarios where user_password = MD5($password) AND user_nick='$pase' or user_mail='$pase'";
+
+      // (user_nick='$pase' or user_mail='$pase') -> $pase name en el LOG IN -> para que tome ambas entradas del input (tanto mail como user)
+
+
+
+      // consulta que va a la base de datos
+      $query = mysqli_query($conex,$sql);
+
+      if ($ver=mysqli_fetch_array($query)) {
+        session_start();
+        $_SESSION["quien"] = $ver['user_id'];
+        $_SESSION["nick"] = $ver['user_nick'];
+        $_SESSION["correo"] = $ver['user_mail'];
+        header("location:mostrar_producto.php");
+
+      } else { 
+        header("location:registro_usuario.php?respuesta=5");
+      }
 }
 ?>
