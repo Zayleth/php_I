@@ -77,7 +77,7 @@ switch($hidden) {
 
     case 5:
       // sentencia para permitir el login del user con el nick o correo PERO que coincida con la contraseña.
-      $sql = "SELECT user_id, user_nick, user_mail from usuarios where user_password = MD5($password) AND user_nick='$pase' or user_mail='$pase'";
+      $sql = "SELECT user_id, user_nick, user_mail from usuarios where user_password = MD5('$password') AND user_nick='$pase' or user_mail='$pase'";
 
       // (user_nick='$pase' or user_mail='$pase') -> $pase name en el LOG IN -> para que tome ambas entradas del input (tanto mail como user)
 
@@ -96,5 +96,22 @@ switch($hidden) {
       } else { 
         header("location:registro_usuario.php?respuesta=5");
       }
+      break;
+
+    case 6:
+      // cerrar sesion
+
+      // se coloca session_start() para trabajar con SESIONES COMO TAL 
+      session_start();
+
+      // se vacia la variable $SESSION 
+      session_unset();
+
+      // se elimina la sesion
+      session_destroy();
+
+      // lo mandamos a registrarse
+      header("location:registro_usuario.php");
+      break;
 }
 ?>

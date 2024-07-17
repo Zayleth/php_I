@@ -5,7 +5,6 @@ if(isset($_SESSION["quien"])) {
 
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +19,10 @@ if(isset($_SESSION["quien"])) {
   include "conexion.php";
   ?>
 
-  <h1>Bienvenido <?php echo $_SESSION['nick'];?></h1>
+  <h1>Bienvenido <?php echo $_SESSION['nick'];?>
+  <a href="acciones.php?hidden=6">Salir</a>
+  
+  </h1>
   
   <h2>Inventory - Product data</h2>
   <table border="1">
