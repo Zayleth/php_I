@@ -30,6 +30,9 @@ user_status -> usuario activo () inactivo ()
     <label for="clave">Clave:</label>
     <input type="password" id="password" name="password" required>
     <input type="hidden" name="hidden" value="5">
+    <!--En caso de que olvides la clave-->
+    <br><br>
+    <a href="olvido_clave.php">Did you forget your password?</a>
     <br><br>
 
     <button type="submit">Enter</button>
