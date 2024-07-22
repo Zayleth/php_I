@@ -7,9 +7,9 @@
 </head>
 <body>
   <!--FORMULARIO PARA RECUPERAR CONTRASEÑA, mediante la confirmacion del correo y un codigo-->
-  <form action="olvido_clave_2" method="post">
+  <form action="olvido_clave_2.php" method="post">
     Ingrese el correo que se registró:
-    <input type="email" name="correo_para verificar_contraseña">
+    <input type="email" name="correo_para_verificar_contrasena">
     <br><br>
     <button type="submit">ENVIAR</button>
   </form>
