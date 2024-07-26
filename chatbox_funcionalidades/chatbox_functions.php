@@ -23,4 +23,6 @@ function chat() {
 
 <?php
 }
+
+// 
 ?>
