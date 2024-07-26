@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION["quien"])) {
+if(isset($_SESSION['quien'])) {
 ?>
 
 
@@ -14,7 +14,8 @@ if(isset($_SESSION["quien"])) {
 </head>
 <body>
   
-  <?php include "menu.php";
+  <?php 
+  include "menu.php";
   include "other_functions.php";
   include "conexion.php";
   ?>

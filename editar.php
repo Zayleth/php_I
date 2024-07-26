@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  if(isset($_SESSION['quien'])) {
+  ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +13,15 @@
 </head>
 <body>
 
+  <?php
+  include "menu.php";
+  ?>
+
   <!--insertar.php -> archivo creado para el formulario para ingresar datos de productos-->
 
   <h1>Insert Products</h1>
-  <?php 
+  <?php
+  
   if (@$_GET['respuesta'] == 1) { ?>
     <h2 style="color: #0f0;">Data was edited successfully.</h2>
 
@@ -118,3 +129,9 @@
   ?>
 </body>
 </html>
+
+<?php
+  } else {
+    header("location:registro_usuario.php");
+  }
+?>

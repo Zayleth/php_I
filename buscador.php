@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  if(isset($_SESSION['quien'])) {
+  ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +12,8 @@
   <title>Search Products</title>
 </head>
 <body>
-
-  <?php include "menu.php"
+  <?php 
+  include "menu.php"
   ?>
   
   <h1>Search - Products data</h1>
@@ -103,3 +109,9 @@
 
 </body>
 </html>
+
+<?php
+  } else {
+    header("location:registro_usuario.php");
+  }
+?>

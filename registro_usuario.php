@@ -1,5 +1,5 @@
 <?php
-/* CAMPOS DE LA BASE DE DATOS
+  /* CAMPOS DE LA BASE DE DATOS
 user_id 
 user_nick -> apodo unico
 user_mail -> mail unico
@@ -10,6 +10,7 @@ user_status -> usuario activo () inactivo ()
 */
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +19,9 @@ user_status -> usuario activo () inactivo ()
   <title>User Register</title>
 </head>
 <body>
+  <?php 
+  include "menu.php";
+  ?>
   <!--VARIABLES GET Y POST - BUSCAR DIFERENCIA-->
   <!--APARTADO DE LOGIN-->
   <h1>Login:</h1>

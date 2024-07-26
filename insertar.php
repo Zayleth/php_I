@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  if(isset($_SESSION['quien'])) {
+  ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +13,8 @@
 </head>
 <body>
 
-  <?php include "menu.php"
+  <?php 
+  include "menu.php";
   ?>
 
   <!--insertar.php -> archivo creado para el formulario para ingresar datos de productos-->
@@ -71,3 +78,9 @@
   
 </body>
 </html>
+
+<?php
+  } else {
+    header("location:registro_usuario.php");
+  }
+?>
