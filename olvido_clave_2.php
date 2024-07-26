@@ -24,7 +24,7 @@ if ($ver=mysqli_fetch_array($q)) {
   // mandamos el codigo al correo:
   mail($correo_para_verificar_contrasena, "Recuperacion de clave", $cuerpo, "From to web");
 
-  echo "Enviado con éxito, reviso su correo.";
+  echo "Enviado con éxito, revise su correo.";
 
 } else {
   echo "No hay registro de este correo";
