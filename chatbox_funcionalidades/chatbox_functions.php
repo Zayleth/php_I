@@ -22,7 +22,7 @@ function chat() {
   
   <?php 
 
-  $conversacion = "SELECT question, answer, date_day, hour_day FROM chatbot WHERE id_usuario = '$_SESSION[quien]' AND date_day = '$fecha'";
+  $conversacion = "SELECT question, answer, date_day, hour_day FROM chatbot WHERE id_usuario = '$_SESSION[quien]' AND date_day = '$fecha' ORDER BY id DESC";
 
   $qq = mysqli_query($conex, $conversacion);
 
