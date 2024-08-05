@@ -10,7 +10,7 @@ function chat() {
 </div>
 
 <div id="hablar">
-<form action="respuesta_chatbot.php" method="post">
+<form action="chatbox_funcionalidades/respuesta_chatbot.php" method="post">
   <input type="text" name="pregunta">
   <button type="submit">ASK</button>
 </form>

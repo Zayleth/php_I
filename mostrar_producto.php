@@ -16,6 +16,7 @@ if(isset($_SESSION['quien'])) {
   
   <?php 
   include "menu.php";
+  include "chatbox_funcionalidades/chatbox_functions.php";
   include "other_functions.php";
   include "conexion.php";
   ?>
@@ -129,7 +130,9 @@ if(isset($_SESSION['quien'])) {
     ?>
     
   </table>
-  
+
+  <?php chat();?>
+
   <script>
 
     function confirmar(cod) {
