@@ -5,10 +5,11 @@ extract($_POST);
 $fecha = date("Y-m-d");
 $hora = date("H: i: s:");
 
-$sql = "INSERT INTO chatbot VALUES ('', '$_SESSION[quien]', '', '', '$fecha', '$hora', 0)";
+$sql = "INSERT INTO chatbot VALUES ('', '$_SESSION[quien]', '$question', '', '$fecha', '$hora', 0)";
 
 mysqli_query($conex, $sql);
 
+// funcion max
 $max="select max(id) from chatbot";
 	$r=mysqli_query($conex,$max);
 	$m=mysqli_fetch_array($r);
@@ -35,5 +36,6 @@ if ($ver = mysqli_fetch_array($q)) {
   mysqli_query($conex, $actualizar);
 }
 
+header("location:../mostrar_producto.php");
 ?>
 

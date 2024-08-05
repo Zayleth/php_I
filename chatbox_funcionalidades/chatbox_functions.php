@@ -1,5 +1,7 @@
 <?php
 function chat() {
+  $conex = mysqli_connect("localhost", "root", "", "cedulas_database") or die("Could not connect to database. Try later");
+  $fecha = date("Y-m-d");
 ?>
 
 
@@ -16,13 +18,26 @@ function chat() {
 </form>
 </div>
 
+<div id="conversacion">
+  
+  <?php 
+
+  $conversacion = "SELECT question, answer, date_day, hour_day FROM chatbot WHERE id_usuario = '$_SESSION[quien]' AND date_day = '$fecha'";
+
+  $qq = mysqli_query($conex, $conversacion);
+
+  while($k = mysqli_fetch_array($qq)) {
+    ?>
+
+    <p><?php echo $_SESSION['nick'].": ".$k[0];?></p>	
+    <p><?php echo "Robot: ".$k[1];?></p>	<?php 	
+    }
+    ?>
+
+  <?php
+  }
+  ?>
+  
+
 </div>
-
-
-
-
-<?php
-}
-
-// 
-?>
+</div>
